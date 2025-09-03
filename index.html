@@ -1,0 +1,24 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Vite + TS + Tailwind</title>
+  </head>
+  <body>
+    <header class="border-b bg-white/50 backdrop-blur-sm sticky top-0">
+      <div class="mx-auto max-w-3xl flex items-center justify-between p-4">
+        <a href="#/todos" class="font-bold">Replit Test App</a>
+        <nav class="flex gap-4 text-sm">
+          <a href="#/todos" class="hover:underline">Todos</a>
+          <a href="#/tags" class="hover:underline">Tags</a>
+        </nav>
+      </div>
+    </header>
+    <main class="mx-auto max-w-3xl p-4">
+      <div id="app"></div>
+    </main>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>
