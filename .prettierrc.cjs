@@ -1,6 +1,6 @@
 /* eslint-env node */
 /** @type {import('prettier').Config} */
-export default {
+module.exports = {
   semi: true,
   singleQuote: true,
   printWidth: 100,

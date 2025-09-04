@@ -189,6 +189,7 @@ _Add proxy scripts only if `/server` is introduced._
 - Semantic HTML & a11y
 - Tailwind utilities + `cva` variants
 - Small, focused components
+- Never use native HTML form elements. Use the elements from src/ui-kit as maximum as possible
 
 ---
 
