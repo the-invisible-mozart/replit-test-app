@@ -49,6 +49,20 @@ Only after receiving explicit "yes" confirmation, implement real integration usi
 
 ---
 
+## **🔥 MANDATORY UI COMPONENT USAGE - NO NATIVE HTML FORMS**
+**⚠️ CRITICAL RULE: NEVER use native HTML form elements (input, textarea, button, select, etc.)**
+**✅ ALWAYS use components from `src/ui-kit/` instead:**
+- Use `<Input>` instead of `<input>`
+- Use `<Button>` instead of `<button>`
+- Use `<Textarea>` instead of `<textarea>`
+- Use `<Label>` instead of `<label>`
+- Use `<Card>`, `<CardHeader>`, `<CardContent>` for layout containers
+- Use form components from `src/ui-kit/form.tsx` for complex forms
+
+**This is NON-NEGOTIABLE. Any code using native HTML form elements must be immediately refactored.**
+
+---
+
 ## ✅ Project Type
 
 - **Frontend‑first SPA**
@@ -238,7 +252,26 @@ _Add proxy scripts only if `/server` is introduced._
 - Semantic HTML & a11y
 - Tailwind utilities + `cva` variants
 - Small, focused components
-- Never use native HTML form elements. Use the elements from src/ui-kit as maximum as possible
+
+## 🚫 **CRITICAL: UI COMPONENT REQUIREMENTS**
+**❌ FORBIDDEN - Never use these native HTML elements:**
+- `<input>` → Use `<Input>` from `~/ui-kit/input`
+- `<textarea>` → Use `<Textarea>` from `~/ui-kit/textarea`
+- `<button>` → Use `<Button>` from `~/ui-kit/button`
+- `<label>` → Use `<Label>` from `~/ui-kit/label`
+- `<select>` → Use `<Select>` from `~/ui-kit/select`
+- Plain `<div>` for cards → Use `<Card>`, `<CardHeader>`, `<CardContent>` from `~/ui-kit/card`
+
+**✅ REQUIRED IMPORTS for any form/UI:**
+```tsx
+import { Button } from "~/ui-kit/button";
+import { Input } from "~/ui-kit/input";
+import { Label } from "~/ui-kit/label";
+import { Textarea } from "~/ui-kit/textarea";
+import { Card, CardContent, CardHeader, CardTitle } from "~/ui-kit/card";
+```
+
+**This rule applies to ALL components - no exceptions. Always check existing ui-kit components before writing any form elements.**
 
 ---
 
