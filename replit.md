@@ -6,23 +6,46 @@
 ## **MANDATORY FRONTEND-FIRST APPROACH**
 **Default posture:** NO backend, NO SSR, NO real network I/O — **MOCK EVERYTHING BY DEFAULT**
 
+### **🔒 BACKEND REQUEST DETECTION - MANDATORY STOP & CHECK**
+
+**ANY mention of these keywords MUST trigger the protocol:**
+- API, backend, database, server, CRUD, REST, endpoints, SQLite, PostgreSQL, MySQL, MongoDB
+- External service, real data, persistence, authentication, auth, login, payments, third-party
+- Express, FastAPI, Node.js server, backend framework
+- Network calls, HTTP requests, fetch, axios
+
+**🛑 BEFORE WRITING ANY CODE: If the request contains ANY of the above keywords, STOP and follow the 4-step protocol below.**
+
 ### **WHEN USER REQUESTS API/BACKEND - FOLLOW THIS EXACT PROTOCOL:**
 
 #### **STEP 1: ALWAYS RECOMMEND FRONTEND-ONLY FIRST**
 Say: *"I recommend keeping this app frontend-only. I can implement a fully mocked version that mirrors the behavior."*
 
-#### **STEP 2: OFFER MOCK PLAN (DEFAULT)**
-- Outline endpoints, shapes, and latency in the mock
-- Implement behind `apiClient` so it's swappable
-- Use localStorage or memory for persistence
+**DO NOT assume the user's request is their final decision. Even if they say "build me a SQLite CRUD API" you MUST still offer the mock-first approach.**
+
+#### **STEP 2: OFFER DETAILED MOCK PLAN (DEFAULT)**
+- Outline specific endpoints, data shapes, and simulated latency
+- Explain how it will be implemented behind `apiClient` interface so it's swappable
+- Detail localStorage or memory persistence approach
+- Show how it will perfectly mirror the real implementation behavior
 
 #### **STEP 3: ASK FOR EXPLICIT CONFIRMATION**
-**REQUIRED QUESTION:** *"Do you want me to integrate the real API instead of the mock?"*
+**MANDATORY EXACT QUESTION:** *"Do you want me to integrate the real API instead of the mock?"*
+
+**This question is NON-NEGOTIABLE regardless of how explicit the original request seemed.**
 
 #### **STEP 4: ONLY PROCEED IF USER EXPLICITLY CONFIRMS**
-Only then implement real integration using guidelines below.
+Only after receiving explicit "yes" confirmation, implement real integration using guidelines below.
 
-**⚠️ NEVER skip steps 1-3. Always start with frontend-only recommendation.**
+**🔒 THESE STEPS ARE NON-NEGOTIABLE. NEVER skip steps 1-3, even if the user explicitly mentions specific backend technologies.**
+
+### **❌ EXAMPLES OF WHAT NOT TO DO:**
+- User: "Build a CRUD API with SQLite" → ❌ DON'T immediately start building backend
+- User: "I want real database persistence" → ❌ DON'T assume this means skip the protocol
+- User: "Add Express.js server" → ❌ DON'T jump straight to server implementation
+
+### **✅ CORRECT APPROACH:**
+- ANY backend mention → 🛑 STOP → Recommend mock → Ask confirmation → Then proceed
 
 ---
 
