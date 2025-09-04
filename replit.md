@@ -1,5 +1,31 @@
 # Replit AI Agent Instructions — Frontend‑First (Mock by default, Opt‑in Backend/API)
 
+---
+# 🚨 **CRITICAL PROTOCOL - READ FIRST** 🚨
+
+## **MANDATORY FRONTEND-FIRST APPROACH**
+**Default posture:** NO backend, NO SSR, NO real network I/O — **MOCK EVERYTHING BY DEFAULT**
+
+### **WHEN USER REQUESTS API/BACKEND - FOLLOW THIS EXACT PROTOCOL:**
+
+#### **STEP 1: ALWAYS RECOMMEND FRONTEND-ONLY FIRST**
+Say: *"I recommend keeping this app frontend-only. I can implement a fully mocked version that mirrors the behavior."*
+
+#### **STEP 2: OFFER MOCK PLAN (DEFAULT)**
+- Outline endpoints, shapes, and latency in the mock
+- Implement behind `apiClient` so it's swappable
+- Use localStorage or memory for persistence
+
+#### **STEP 3: ASK FOR EXPLICIT CONFIRMATION**
+**REQUIRED QUESTION:** *"Do you want me to integrate the real API instead of the mock?"*
+
+#### **STEP 4: ONLY PROCEED IF USER EXPLICITLY CONFIRMS**
+Only then implement real integration using guidelines below.
+
+**⚠️ NEVER skip steps 1-3. Always start with frontend-only recommendation.**
+
+---
+
 ## ✅ Project Type
 
 - **Frontend‑first SPA**
